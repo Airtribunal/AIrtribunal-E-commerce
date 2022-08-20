@@ -1,38 +1,50 @@
-.App {
-  text-align: center;
+/* Import */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;0,600;0,700;1,400;1,500&family=Rubik:wght@400;500;700&display=swap');
+
+/* General */
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Containers */
+.nav-container {
+  width: 100%;
+  max-width: 12in;
+  margin: 0 auto;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* Navbar */
+.nav {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 20px 10px;
+
+  box-shadow: 0 1px 4px hsl(0 4% 15% / 10%);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.logo {
+  font-size: 1.5rem;
+  background: #355C7D;
+  background: -webkit-linear-gradient(to right, #C06C84, #6C5B7B, #355C7D);
+  background: linear-gradient(to right, #C06C84, #6C5B7B, #355C7D);
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#cart {
+  cursor: pointer;
 }
