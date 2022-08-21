@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import "./App.css";
-import { Navbar, Main } from './components/index';
+import { Navbar, Main, Cart, Contact } from './components/index';
+import { Layout } from 'antd';
+import { Routes, Route, Link } from 'react-router';
 
 const App = () => {
   return (
@@ -9,7 +11,14 @@ const App = () => {
         <Navbar />
       </section>
       <section className="main">
-        <Main />
+        <Layout>
+          <Routes>
+            <Route exact path='/' element={<Main />} />
+            <Route exact path='/cart' element={<Cart />} />
+            <Route exact path="/contact" element={<Contact/>} />
+            <Route exact path="/products" element={<Main/>} />
+          </Routes>
+        </Layout>
       </section>
       <footer className="footer">
 

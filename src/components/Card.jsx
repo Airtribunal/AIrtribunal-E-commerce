@@ -9,7 +9,7 @@ const Card = (props) => {
             <h2 className="product-title">{props.name}</h2>
             <span className="product price">{`$ ${props.price}`}</span>
             <span className="product-cart">
-                <box-icon id="cart" className="cart-icon" name='shopping-bag'></box-icon>
+                <img id="cart-add" src="/images/bag.png" alt="" className="cart-icon" />
             </span>
         </div>
     );

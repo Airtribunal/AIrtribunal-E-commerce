@@ -1,10 +1,12 @@
 import React from 'react';
 import Card from './Card';
 import data from '../data';
+import { nanoid } from 'nanoid';
 
 const Main = () => {
     const products = data.map((product) => {
         return (<Card
+            key={nanoid()}
             img={product.img}
             name={product.name}
             price={product.price}
