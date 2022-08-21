@@ -1,17 +1,16 @@
-import React from 'react';
-import "boxicons";
+import React, { useState } from 'react';
 import "./App.css";
-import { Navbar } from './components/index';
+import { Navbar, Main } from './components/index';
 
 const App = () => {
   return (
     <>
-      <nav className="navbar">
+      <section className="navbar">
         <Navbar />
-      </nav>
-      <main className="main">
-
-      </main>
+      </section>
+      <div className="main">
+        <Main />
+      </div>
       <footer className="footer">
 
       </footer>
@@ -20,5 +19,3 @@ const App = () => {
 }
 
 export default App;
-
-{/* <box-icon name='shopping-bag'></box-icon> */ }
