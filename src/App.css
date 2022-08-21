@@ -81,6 +81,9 @@ section {
 
 .product-card {
   position: relative;
+  border: 2px solid #6C5B7B;
+  border-radius: 7px;
+  padding: 7px;
 }
 
 .products {
@@ -92,7 +95,7 @@ section {
 }
 
 .product-img img {
-  width: 3.5in;
+  width: 100%;
 }
 
 .product-title {
@@ -110,11 +113,11 @@ section {
 
 .product-cart {
   position: absolute;
-  right: 0;
-  bottom: 0;
+  right: .5em;
+  bottom: .5em;
   padding: 5px 5px 0px 5px;
   background: #947da7;
-  transition: transform .1s ease-in;
+  border-radius: 3px;
 }
 
 .cart-icon {
