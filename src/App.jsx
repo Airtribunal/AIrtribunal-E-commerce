@@ -8,9 +8,9 @@ const App = () => {
       <section className="navbar">
         <Navbar />
       </section>
-      <div className="main">
+      <section className="main">
         <Main />
-      </div>
+      </section>
       <footer className="footer">
 
       </footer>
