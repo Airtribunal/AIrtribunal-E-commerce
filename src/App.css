@@ -19,6 +19,10 @@ section {
   padding: 2em;
 }
 
+svg {
+  transition: all .5s ease-in-out;
+}
+
 /* Containers */
 .nav-container {
   width: 100%;
@@ -63,7 +67,6 @@ section {
 }
 
 .nav-link {
-  flex: 1 1 0;
   position: relative;
   margin: 0 2em;
   text-transform: uppercase;
@@ -80,6 +83,7 @@ section {
   content: "";
   display: block;
   width: 0%;
+  max-width: 100px;
   height: 2px;
   background: #355C7D;
   background: -webkit-linear-gradient(to right, #C06C84, #6C5B7B, #355C7D);
@@ -92,11 +96,11 @@ section {
   left: 0;
   z-index: 1;  
 
-  transition: all .28s ease-in-out;
+  transition: all .27s ease-in-out;
 }
 
 .nav-link:hover:after {
-  width: 75%;
+  width: 100%;
   opacity: 1;
 }
 
@@ -108,6 +112,8 @@ section {
 .main-container {
   max-width: 11in;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .main-title {
@@ -129,6 +135,7 @@ section {
 }
 
 .product-card {
+  margin: 0 auto;
   position: relative;
   border: 2px solid #6C5B7B;
   border-radius: 7px;
@@ -138,7 +145,7 @@ section {
 .products {
   margin-top: 2em;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   grid-column-gap: 1.5rem;
   grid-row-gap: 2rem;
 }
@@ -175,12 +182,72 @@ section {
   width: .2in;
 }
 
+.bars {
+  position: relative;
+  z-index: 99999999;
+  display: none;
+  width: .2in;
+  color: #fff;
+}
+
+/* Media */
+
+/* 721 PX */
 @media (max-width: 721px) {
-  .nav-link {
-    display: none;
+  .nav-links {
+    position: fixed;
+    inset: 0 0 0 0;
+    flex-direction: column;
+    justify-content: initial;
+    align-items: center;
+    text-align: center;
+    background-color: #ffff;
+    display: flex;
+    height: 60%;
+    transform: translateX(100%);
+    transition: all .3s ease-in;
   }
 
-  .nav-link:last-child {
+  .nav-links.active {
+    position: fixed;
+    inset: 0 0 0 0;
+    flex-direction: column;
+    justify-content: initial;
+    align-items: center;
+    text-align: center;
+    background-color: #ffff;
+    z-index: 999999;
+    height: 60%;
+    display: flex;
+    transform: translateX(0);
+  }
+
+  .nav-link {
+    margin: 1em auto;
+  }
+
+  .nav-link:first-child {
+    margin-top: 9em;
+  }
+
+  .nav-link:hover:after {
+    width: 0;
+  }
+
+  .bars{
     display: block;
+    margin-right: 1em;
+    cursor: pointer;
   }
 }
+
+/* 390PX */
+ @media (max-width: 390) {
+  .products {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  .product-img {
+    max-width: 200px;
+  }
+ }
