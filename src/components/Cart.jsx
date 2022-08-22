@@ -1,10 +1,11 @@
 import React from 'react';
 
 const Cart = () => {
-    return (
-        <div>
-            <h1>Your Cart</h1>
-        </div>
+    return (            
+        <section className="cart-section">
+            <div className="cart-container">
+            </div>
+        </section>
     );
 }
 

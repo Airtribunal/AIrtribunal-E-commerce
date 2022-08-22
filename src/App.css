@@ -15,6 +15,11 @@
   -webkit-font-smoothing: antialiased;
 }
 
+::selection {
+  color: #fff;
+  background: #C06C84;
+}
+
 section {
   padding: 2em;
 }
@@ -104,9 +109,9 @@ svg {
   opacity: 1;
 }
 
-.nav-link:last-child::after {
+/* .nav-link:last-child::after {
   display: none;
-}
+} */
 
 /* Main */
 .main-container {
@@ -176,6 +181,8 @@ svg {
   background: -webkit-linear-gradient(to right, #C06C84, #6C5B7B, #355C7D);
   background: linear-gradient(to top right, #C06C84, #6C5B7B, #355C7D);
   border-radius: 3px;
+
+  cursor: pointer;
 }
 
 .cart-icon {
@@ -227,7 +234,7 @@ svg {
   }
 
   .nav-link:first-child {
-    margin-top: 9em;
+    margin-top: 6em;
   }
 
   .nav-link:hover:after {
