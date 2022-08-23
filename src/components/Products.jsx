@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Card from './Card';
 import data from '../data';
 import { nanoid } from 'nanoid';
@@ -15,8 +15,8 @@ const Main = () => {
 
     return (
         <section className="products-section">
+            <h1 className="main-title">Our Products</h1>
             <div className="main-container">
-                <h1 className="main-title">Our Products</h1>
                 <div className="products">
                     {products}
                 </div>

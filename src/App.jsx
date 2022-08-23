@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import "./App.css";
-import { Navbar, Main, Cart, Contact } from './components/index';
+import { Navbar, Products, Cart, Contact, Homepage } from './components/index';
 import { Layout } from 'antd';
-import { Routes, Route, Link } from 'react-router';
+import { Routes, Route } from 'react-router';
 
 const App = () => {
 
@@ -12,14 +12,12 @@ const App = () => {
         <Navbar />
       </section>
       <section className="main">
-        <Layout>
-          <Routes>
-            <Route exact path='/' element={<Main />} />
-            <Route exact path='/cart' element={<Cart/>} />
-            <Route exact path="/contact" element={<Contact/>} />
-            <Route exact path="/products" element={<Main/>} />
-          </Routes>
-        </Layout>
+        <Routes>
+          <Route exact path='/' element={<Homepage />} />
+          <Route exact path='/cart' element={<Cart />} />
+          <Route exact path="/contact" element={<Homepage />} />
+          <Route exact path="/products" element={<Products />} />
+        </Routes>
       </section>
       <footer className="footer">
 
