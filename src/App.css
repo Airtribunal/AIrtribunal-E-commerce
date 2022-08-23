@@ -65,7 +65,7 @@
   position: relative;
   margin: 0 2em;
   text-transform: uppercase;
-  
+
   background: #355C7D;
   background: -webkit-linear-gradient(to right, #C06C84, #6C5B7B, #355C7D);
   background: linear-gradient(to right, #C06C84, #6C5B7B, #355C7D);
@@ -89,7 +89,7 @@
   position: absolute;
   right: 0;
   left: 0;
-  z-index: 1;  
+  z-index: 1;
 
   transition: all .27s ease-in-out;
 }
@@ -190,13 +190,16 @@
 
 
 /* Homepage */
+.homepage {
+  padding: 0 30px;
+}
+
 .home-content {
   display: flex;
   flex-direction: column;
   width: 100%;
   max-width: 8in;
   margin-top: 15%;
-  padding: 0 30px;
 }
 
 .home-title {
@@ -210,9 +213,56 @@
   font-size: 1.2rem;
 }
 
+/* Contact */
+.contact {
+  padding-top: 18em;
+}
 
+.contact-title {
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  font-weight: normal;
+}
 
+.contact-part:nth-child(1) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
+.contact-form {
+  margin-top: 1em;
+  display: flex;
+  flex-direction: column;
+}
+
+.input {
+  border: 2px solid #000;
+  padding-left: 2em;
+  max-width: 3.5in;
+  height: 3em;
+  margin: 1.25em 0;
+}
+
+.input:nth-child(4) {
+  padding-top: 1.75em;
+  padding-bottom: 8em;
+}
+
+.contact-button {
+  max-width: 3.5in;
+  height: 3em;
+  background: #355C7D;
+  background: -webkit-linear-gradient(to right, #C06C84, #6C5B7B, #355C7D);
+  background: linear-gradient(to right, #C06C84, #6C5B7B, #355C7D);
+  border: 0;
+  color: #fff;
+  margin-top: 1em;
+  cursor: pointer;
+  font-size: 1.05rem;
+  font-weight: light;
+  text-transform: uppercase;
+}
 
 
 
@@ -267,7 +317,7 @@
     width: 0;
   }
 
-  .bars{
+  .bars {
     display: block;
     margin-right: 1em;
     cursor: pointer;
@@ -275,12 +325,12 @@
 }
 
 /* 390PX */
- @media (max-width: 380) {
+@media (max-width: 380) {
   .products {
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   }
 
-  .product-img{
+  .product-img {
     max-width: 100px;
   }
- }
+}

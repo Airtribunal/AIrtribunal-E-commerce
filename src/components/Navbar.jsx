@@ -16,7 +16,7 @@ const Navbar = () => {
                     <div className={isActive ? "nav-links active" : "nav-links"}>
                         <Link to="/" className="nav-link" onClick={() => window.location.replace("#")}>home</Link>
                         <Link to="/products" className="nav-link">products</Link>
-                        <Link to="/" className="nav-link">contact</Link>
+                        <Link to="/" onClick={() => window.location.replace("#contact")} className="nav-link">contact</Link>
                         <Link to="/cart" className="nav-link"><img id="cart-nav" src="/images/bag-gradient.png" alt="" className="cart-icon nav-cart" /></Link>
                     </div>
 
