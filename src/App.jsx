@@ -1,7 +1,6 @@
 import React from 'react';
 import "./App.css";
-import { Navbar, Products, Cart, Contact, Homepage } from './components/index';
-import { Layout } from 'antd';
+import { Navbar, Products, Cart, Homepage } from './components/index';
 import { Routes, Route } from 'react-router';
 
 const App = () => {
@@ -12,12 +11,13 @@ const App = () => {
         <Navbar />
       </section>
       <section className="main">
-        <Routes>
-          <Route exact path='/' element={<Homepage />} />
-          <Route exact path='/cart' element={<Cart />} />
-          <Route exact path="/contact" element={<Homepage />} />
-          <Route exact path="/products" element={<Products />} />
-        </Routes>
+        <div className="routes">
+          <Routes>
+            <Route exact path='/' element={<Homepage />} />
+            <Route exact path='/cart' element={<Cart />} />
+            <Route exact path="/products" element={<Products />} />
+          </Routes>
+        </div>
       </section>
       <footer className="footer">
 
