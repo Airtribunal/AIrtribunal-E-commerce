@@ -43,9 +43,6 @@ const Contact = () => {
                         <br />
                         <br />
                     </div>
-                    <div className="contact-part">
-                        
-                    </div>
                 </div>
             </div>
         </section>

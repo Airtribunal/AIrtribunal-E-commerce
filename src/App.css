@@ -197,7 +197,6 @@
 .home-content {
   display: flex;
   flex-direction: column;
-  width: 100%;
   max-width: 8in;
   margin-top: 15%;
 }
@@ -215,6 +214,7 @@
 
 /* Contact */
 .contact {
+  margin: 0 auto;
   padding-top: 18em;
 }
 
@@ -324,13 +324,30 @@
   }
 }
 
-/* 390PX */
-@media (max-width: 380) {
-  .products {
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+/* 605 */
+@media (max-width: 634px) {
+  .home-title {
+    font-size: 3.2rem;
+  }
+  .home-desc {
+    font-size: .8rem;
   }
 
-  .product-img {
-    max-width: 100px;
+  .contact {
+    padding-top: 10em;
+  }
+}
+
+/* 390PX */
+@media (max-width: 370px) {
+  .home-title {
+    font-size: 2.3rem;
+  }
+  .home-desc {
+    font-size: .7rem;
+  }
+
+  .contact-title {
+    font-size: 1.3rem;
   }
 }

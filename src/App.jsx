@@ -20,7 +20,11 @@ const App = () => {
         </div>
       </section>
       <footer className="footer">
-
+        {/* List of tasks:
+          footer
+          night mode
+          skeleton
+        */}
       </footer>
     </>
   );
