@@ -1,17 +1,18 @@
 import React from 'react';
 
-const Contact = () => {
+const Contact = (props) => {
     const handleSubmit = (event) => {
         event.preventDefault()
-        console.log("opa dide");
     }
+
+    const { theme, handleToggle } = props
 
     return (
         <section id='contact' className="contact">
             <div className="container">
                 <div className="contact-content">
                     <div className="contact-part">
-                        <h1 className="contact-title">Contact</h1>
+                        <h1 className={theme ? "contact-title dark" : "contact-title"}>Contact</h1>
                         <form onSubmit={handleSubmit} className="contact-form">
                             <input 
                                 type="text" 
@@ -35,13 +36,6 @@ const Contact = () => {
                             />  
                             <button className='contact-button'>Send a Message</button>
                         </form>  
-                        <br />
-                        <br />
-                        <br />
-                        <br />
-                        <br />
-                        <br />
-                        <br />
                     </div>
                 </div>
             </div>

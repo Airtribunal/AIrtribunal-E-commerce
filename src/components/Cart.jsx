@@ -1,10 +1,11 @@
 import React from 'react';
 
-const Cart = () => {
+const Cart = (props) => {
+    const { theme } = props 
+
     return (            
         <section className="cart-section">
-            <div className="cart-container">
-            </div>
+            
         </section>
     );
 }
