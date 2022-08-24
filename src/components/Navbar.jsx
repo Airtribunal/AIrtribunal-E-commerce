@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
-import { Switch } from 'antd';
-import { CheckOutlined, CloseOutlined } from '@ant-design/icons';
+import { Switch } from 'evergreen-ui'
 
 const Navbar = (props) => {
     const [isActive, setIsActive] = useState(false);
@@ -22,10 +21,7 @@ const Navbar = (props) => {
                         <Link to="/products" className="nav-link">products</Link>
                         <Link to="/" onClick={() => window.location.replace("#contact")} className="nav-link">contact</Link>
                         <Link to="/cart" className="nav-link"><img id="cart-nav" src="/images/bag-gradient.png" alt="" className="cart-icon nav-cart" /></Link>
-                        <Switch
-                            onClick={handleToggle}
-                            defaultChecked
-                        />
+                        <Switch checked={theme} onChange={handleToggle} />
                     </div>
 
                     <div className="bars">
