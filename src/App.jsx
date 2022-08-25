@@ -5,6 +5,8 @@ import { Routes, Route } from 'react-router';
 import "boxicons"
 
 const App = () => {
+  const [loaded, setLoaded] = useState(false)
+
   const getTheme = () => {
     return JSON.parse(localStorage.getItem("theme")) || false
   }
