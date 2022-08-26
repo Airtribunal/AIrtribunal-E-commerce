@@ -56,7 +56,9 @@ const App = () => {
 export default App;
 
 {/* List of tasks:
-          footer
-          night mode
-          skeleton
+          controlled inputs
+          cart sctucture
+          cart logic
+          e-mail sender
+          fade text effect
         */}
