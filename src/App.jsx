@@ -4,8 +4,6 @@ import { Navbar, Products, Cart, Homepage } from './components/index';
 import { Routes, Route } from 'react-router';
 
 const App = () => {
-  const [loaded, setLoaded] = useState(false)
-
   const getTheme = () => {
     return JSON.parse(localStorage.getItem("theme")) || false
   }

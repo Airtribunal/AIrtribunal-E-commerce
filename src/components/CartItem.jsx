@@ -4,12 +4,11 @@ const CartItem = () => {
     return (
         <div className="cart-item">
             <div className="cart-item-content">
-                <div className="cart-item-img">
-                    <img src="" alt="" />
-                </div>
-                <h2 className="cart-item-title"></h2>
-                <p className="cart-item-price"></p>
+                <img src="/images/product9.jpg" alt="" className="cart-item-img" />
+                <h2 className="cart-item-name">Aiaiaia</h2>
+                <p className="cart-item-price">$ 45</p>
             </div>
+            <button className="remove-btn">remove</button>
         </div>
     );
 }

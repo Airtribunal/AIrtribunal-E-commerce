@@ -1,12 +1,24 @@
 import React from 'react';
+import CartItem from './CartItem';
 
 const Cart = (props) => {
     const { theme } = props 
 
     return (            
-        <section className="cart-section">
-            
-        </section>
+        <>
+            <div className="cart-section">
+                <div className="container">
+                    <h1 className={theme ? "cart-title dark" : "cart-title"}>Your cart</h1>
+                    <div className="cart-products">
+                        <CartItem />
+                        <CartItem />
+                        <CartItem />
+                        <CartItem />
+                        <CartItem />
+                    </div>
+                </div>
+            </div>
+        </>
     );
 }
 
