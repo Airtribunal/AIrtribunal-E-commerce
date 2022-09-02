@@ -492,6 +492,15 @@
   cursor: pointer;
 }
 
+.open-bars {
+  font-size: 1.3rem;
+}
+
+.close-bars {
+  font-size: 2rem;
+  max-height: 2rem;
+}
+
 /* Media */
 
 /* 721 PX */
