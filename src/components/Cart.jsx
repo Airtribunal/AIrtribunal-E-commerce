@@ -10,11 +10,7 @@ const Cart = (props) => {
                 <div className="container">
                     <h1 className={theme ? "cart-title dark" : "cart-title"}>Your cart</h1>
                     <div className="cart-products">
-                        <CartItem />
-                        <CartItem />
-                        <CartItem />
-                        <CartItem />
-                        <CartItem />
+                        <CartItem theme={theme}/>
                     </div>
                 </div>
             </div>

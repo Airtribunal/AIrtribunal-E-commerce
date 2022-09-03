@@ -466,10 +466,21 @@
   text-transform: uppercase;
   font-size: 1.2rem;
   font-weight: 600;
+
+  color: #000;
+}
+
+.cart-item-name.dark {
+  color: #fff;
 }
 
 .cart-item-price {
   font-size: 1.2rem;
+  color: #000;
+}
+
+.cart-item-price.dark {
+  color: #fff;
 }
 
 .remove-btn {
@@ -498,9 +509,8 @@
 
 .close-bars {
   font-size: 2rem;
-  max-height: 2rem;
 }
-
+  
 /* Media */
 
 /* 721 PX */

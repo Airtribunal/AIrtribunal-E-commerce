@@ -27,7 +27,7 @@ const Navbar = (props) => {
                         <Switch checked={theme} onChange={handleToggle} />
                     </div>
                     <div className="bars">
-                        {isActive || !isMobile?
+                        {isActive || !isMobile ?
                             <IoMdClose color={theme ? "#fff" : "#000"} className="close-bars" onClick={handleMobile} />
                             : <FaBars color={theme ? "#fff" : "#000"} className="open-bars" onClick={handleMobile} />
                         }
