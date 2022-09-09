@@ -1,19 +1,21 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Card from './Card';
 import data from '../data';
 import { nanoid } from 'nanoid';
 
 const Products = (props) => {
+    const { theme, handleAddToCart } = props
+
     const products = data.map((product) => {
         return (<Card
             key={nanoid()}
+            id={nanoid()}
             img={product.img}
             name={product.name}
             price={product.price}
+            addToCart={() => handleAddToCart(product)}
         />)
     })
-
-    const { theme } = props
 
     return (
         <section id="products" className={theme ? "products-section dark" : "products-section"}>

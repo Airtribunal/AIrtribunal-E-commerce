@@ -1,11 +1,7 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const Card = (props) => {
-    const [cartArray, setCartArray] = useState([])
-
-    function addToCart() {
-        
-    }
+    const { addToCart, id } = props
 
     return (
         <div className="product-card">
@@ -18,7 +14,7 @@ const Card = (props) => {
                     src="/images/bag.png"
                     alt="product"
                     className="cart-icon"
-                    onClick={() => addToCart()}
+                    onClick={addToCart}
                 />
             </span>
         </div>

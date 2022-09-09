@@ -4,6 +4,7 @@ import { Navbar, Products, Cart, Homepage } from './components/index';
 import { Routes, Route } from 'react-router';
 
 const App = () => {
+  // Dark Mode 
   const getTheme = () => {
     return JSON.parse(localStorage.getItem("theme")) || false
   }
@@ -17,6 +18,28 @@ const App = () => {
   const toggleTheme = () => {
     setIsDark(prevIsDark => !prevIsDark)
   }
+  // Dark Mode
+
+  // Adding to Cart
+  const [cartArray, setCartArray] = useState(JSON.parse(localStorage.getItem("cartArray")) || [])
+
+  useEffect(() => {
+    localStorage.setItem("cartArray", JSON.stringify(cartArray))
+  }, [cartArray])
+  // localStorage.clear()
+
+  function addToCart(product) {
+    setCartArray(prevCartArray => {
+      return [...prevCartArray, product]
+    })
+  }
+  // Adding to Cart
+
+  // Deleting from Cart
+  function deleteFromCart(id) {
+    console.log(id);
+  }
+  // Deleting from Cart
 
   return (
     <main className={isDark ? "biggest dark" : "biggest"}>
@@ -26,9 +49,24 @@ const App = () => {
       <section className="main">
         <div className={isDark ? "routes dark" : "routes"}>
           <Routes>
-            <Route exact path='/' element={<Homepage theme={isDark} handleToggle={toggleTheme} />} />
-            <Route exact path='/cart' element={<Cart theme={isDark} handleToggle={toggleTheme} />} />
-            <Route exact path="/products" element={<Products theme={isDark} handleToggle={toggleTheme} />} />
+            <Route exact path='/' element={<Homepage
+              theme={isDark}
+              handleToggle={toggleTheme}
+            />}
+            />
+            <Route exact path='/cart' element={<Cart
+              theme={isDark}
+              handleToggle={toggleTheme}
+              cartArray={cartArray}
+              handleDeleteFromCart={deleteFromCart}
+            />}
+            />
+            <Route exact path="/products" element={<Products
+              theme={isDark}
+              handleToggle={toggleTheme}
+              handleAddToCart={addToCart}
+            />}
+            />
           </Routes>
         </div>
       </section>
