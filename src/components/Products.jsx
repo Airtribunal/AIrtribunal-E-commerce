@@ -9,7 +9,7 @@ const Products = (props) => {
     const products = data.map((product) => {
         return (<Card
             key={nanoid()}
-            id={nanoid()}
+            id={product.id}
             img={product.img}
             name={product.name}
             price={product.price}

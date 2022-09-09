@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 const Card = (props) => {
-    const { addToCart, id } = props
+    const { addToCart } = props
 
     return (
         <div className="product-card">

@@ -22,11 +22,9 @@ const App = () => {
 
   // Adding to Cart
   const [cartArray, setCartArray] = useState(JSON.parse(localStorage.getItem("cartArray")) || [])
-
   useEffect(() => {
     localStorage.setItem("cartArray", JSON.stringify(cartArray))
   }, [cartArray])
-  // localStorage.clear()
 
   function addToCart(product) {
     setCartArray(prevCartArray => {

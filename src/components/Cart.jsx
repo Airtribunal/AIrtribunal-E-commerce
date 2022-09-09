@@ -3,17 +3,18 @@ import CartItem from './CartItem';
 import { nanoid } from 'nanoid';
 
 const Cart = (props) => {
-    const { theme, cartArray } = props
+    const { theme, cartArray, handleDeleteFromCart} = props
 
     const cartElements = cartArray.map((cartElement) => {
         return (
             <CartItem
                 theme={theme}
                 key={nanoid()}
-                id={nanoid()}
+                id={cartElement.id}
                 img={cartElement.img}
                 name={cartElement.name}
                 price={cartElement.price}
+                deleteFromCart={() => handleDeleteFromCart(cartElement.id)}
             />
         )
     })
