@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import CartItem from './CartItem';
 import { nanoid } from 'nanoid';
-import millify from "millify";
 
 const Cart = (props) => {
     const { theme, cartArray, handleDeleteFromCart, handleClearCart, isCleared } = props
@@ -32,7 +31,7 @@ const Cart = (props) => {
             <div className="cart-section">
                 <div className="container">
                     <h1 className={theme ? "cart-title dark" : "cart-title"}>Your cart</h1>
-                    <p className={theme ? "total-price dark" : "total-price"}>{`Your total is $${total.toFixed(2)}`}</p>
+                    <p className={theme ? "total-price dark" : "total-price"}>{`Your total is $ ${total.toFixed(2)}`}</p>
                     <div className="cart-products">
                         {cartElements}
                     </div>
