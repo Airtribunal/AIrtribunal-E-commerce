@@ -109,11 +109,3 @@ const App = () => {
 }
 
 export default App;
-
-{/* List of tasks:
-          controlled inputs
-          cart sctucture
-          cart logic
-          e-mail sender
-          fade text effect
-        */}
