@@ -32,7 +32,7 @@ const Cart = (props) => {
             <div className="cart-section">
                 <div className="container">
                     <h1 className={theme ? "cart-title dark" : "cart-title"}>Your cart</h1>
-                    <p className="total-price">{`Your total is $${total.toFixed(2)}`}</p>
+                    <p className={theme ? "total-price dark" : "total-price"}>{`Your total is $${total.toFixed(2)}`}</p>
                     <div className="cart-products">
                         {cartElements}
                     </div>
