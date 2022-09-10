@@ -432,6 +432,13 @@
   color: #fff;
 }
 
+.total-price {
+  font-size: 1.1rem;
+  margin-top: -1em;
+  margin-bottom: 2em;
+  padding-left: 14px;
+}
+
 .cart-section {
   padding-bottom: 200px;
 }

@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import CartItem from './CartItem';
 import { nanoid } from 'nanoid';
-import { Link } from 'react-router-dom';
+import millify from "millify";
 
 const Cart = (props) => {
     const { theme, cartArray, handleDeleteFromCart, handleClearCart, isCleared } = props
+    const [total, setTotal] = useState(0)
 
     const cartElements = cartArray.map((cartElement) => {
         return (
@@ -20,17 +21,24 @@ const Cart = (props) => {
         )
     })
 
+    useEffect(() => {
+        cartArray.map((cartElement) => {
+            return setTotal(prevTotal => prevTotal + cartElement.price)
+        })
+    }, [cartArray])
+
     return (
         <>
             <div className="cart-section">
                 <div className="container">
                     <h1 className={theme ? "cart-title dark" : "cart-title"}>Your cart</h1>
+                    <p className="total-price">{`Your total is $${total.toFixed(2)}`}</p>
                     <div className="cart-products">
                         {cartElements}
                     </div>
                     <div className="clear-all-products-btn">
                         <button className="clear-products-btn" onClick={handleClearCart}>
-                           {isCleared ? "nothing to clear" : "Clear all the products"}
+                            {isCleared ? "nothing to clear" : "Clear all the products"}
                         </button>
                     </div>
                 </div>
