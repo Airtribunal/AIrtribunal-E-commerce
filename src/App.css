@@ -488,31 +488,26 @@
   color: #fff;
 }
 
-.remove-btn {
-  position: absolute;
-  top: .5em;
-  right: .5em;
-  z-index: 1;
-  padding: 5px;
-
-  background: #355C7D;
-  background: -webkit-linear-gradient(to right, #C06C84, #6C5B7B, #355C7D);
-  background: linear-gradient(to right, #C06C84, #6C5B7B, #355C7D);
-
-  color: #fff;
-  font-weight: light;
-  text-transform: uppercase;
-
-  border: 0;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
 .clear-all-products-btn {
   display: grid;
   place-content: center;
   margin: 2.5em 0 1.5em 0;
-  
+}
+
+.clear-products-btn {
+  padding: 1.3rem 2rem;
+  margin: 1em .5rem 0 .5rem;
+  text-transform: uppercase;
+  max-width: 3in;
+  background: #355C7D;
+  background: -webkit-linear-gradient(to right, #C06C84, #6C5B7B, #355C7D);
+  background: linear-gradient(to right, #C06C84, #6C5B7B, #355C7D);
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1.05rem;
+  font-weight: light;
+  text-transform: uppercase;
 }
 
 .open-bars {

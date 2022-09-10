@@ -5,6 +5,7 @@ import { Routes, Route } from 'react-router';
 import "boxicons"
 
 const App = () => {
+  const [isCleared, setIsCleared] = useState(true)
   // Dark Mode 
   const getTheme = () => {
     return JSON.parse(localStorage.getItem("theme")) || false
@@ -25,20 +26,38 @@ const App = () => {
   const [cartArray, setCartArray] = useState(JSON.parse(localStorage.getItem("cartArray")) || [])
   useEffect(() => {
     localStorage.setItem("cartArray", JSON.stringify(cartArray))
+    if (cartArray.length > 0) {
+      setIsCleared(false)
+    }
   }, [cartArray])
 
   function addToCart(product) {
     setCartArray(prevCartArray => {
       return [...prevCartArray, product]
     })
+    setIsCleared(false)
   }
   // Adding to Cart
 
   // Deleting from Cart
   function deleteFromCart(id) {
-    console.log(id);
+    cartArray.map((cartElement) => {
+      if (id === cartElement.id) {
+        console.log(id);
+      }
+    })
   }
   // Deleting from Cart
+
+  // Clear the whole cart
+  function clearCart() {
+    setIsCleared(true)
+    localStorage.removeItem("cartArray")
+    if (!isCleared) {
+      window.location.reload()
+    }
+  }
+  // Clear the whole cart
 
   return (
     <main className={isDark ? "biggest dark" : "biggest"}>
@@ -58,6 +77,8 @@ const App = () => {
               handleToggle={toggleTheme}
               cartArray={cartArray}
               handleDeleteFromCart={deleteFromCart}
+              handleClearCart={clearCart}
+              isCleared={isCleared}
             />}
             />
             <Route exact path="/products" element={<Products

@@ -8,14 +8,14 @@ const CartItem = (props) => {
             <img className="product-img" src={img} alt={name} />
             <h2 className={theme ? "cart-item-name dark" : "cart-item-name"}>{name}</h2>
             <p className={theme ? "cart-item-price dark" : "cart-item-price"}>{`${price}$`}</p>
-            <span className="product-cart">
-                <img
-                    id="cart-add"
-                    src="/images/bag.png"
-                    alt="product"
-                    className="cart-icon"
-                    onClick={deleteFromCart}
-                />
+            <span className="product-cart remove-btn">
+            <box-icon 
+                name='trash' 
+                color="#fff"
+                className="product-icon"
+                onClick={deleteFromCart}
+            >
+            </box-icon>
             </span>
         </div>
     );

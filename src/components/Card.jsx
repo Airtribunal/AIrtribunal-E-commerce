@@ -9,13 +9,14 @@ const Card = (props) => {
             <h2 className="product-title">{props.name}</h2>
             <span className="product price">{`$ ${props.price}`}</span>
             <span className="product-cart">
-                <img
+                <box-icon 
                     id="cart-add"
-                    src="/images/bag.png"
-                    alt="product"
-                    className="cart-icon"
+                    name='shopping-bag'
                     onClick={addToCart}
-                />
+                    className="product-icon"
+                    color="#fff"
+                >
+                </box-icon>
             </span>
         </div>
     );

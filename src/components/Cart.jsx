@@ -1,9 +1,10 @@
 import React from 'react';
 import CartItem from './CartItem';
 import { nanoid } from 'nanoid';
+import { Link } from 'react-router-dom';
 
 const Cart = (props) => {
-    const { theme, cartArray, handleDeleteFromCart } = props
+    const { theme, cartArray, handleDeleteFromCart, handleClearCart, isCleared } = props
 
     const cartElements = cartArray.map((cartElement) => {
         return (
@@ -28,8 +29,8 @@ const Cart = (props) => {
                         {cartElements}
                     </div>
                     <div className="clear-all-products-btn">
-                        <button>
-                            Clear all the products
+                        <button className="clear-products-btn" onClick={handleClearCart}>
+                           {isCleared ? "nothing to clear" : "Clear all the products"}
                         </button>
                     </div>
                 </div>
