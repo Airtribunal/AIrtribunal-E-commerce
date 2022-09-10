@@ -3,7 +3,7 @@ import CartItem from './CartItem';
 import { nanoid } from 'nanoid';
 
 const Cart = (props) => {
-    const { theme, cartArray, handleDeleteFromCart} = props
+    const { theme, cartArray, handleDeleteFromCart } = props
 
     const cartElements = cartArray.map((cartElement) => {
         return (
@@ -26,6 +26,11 @@ const Cart = (props) => {
                     <h1 className={theme ? "cart-title dark" : "cart-title"}>Your cart</h1>
                     <div className="cart-products">
                         {cartElements}
+                    </div>
+                    <div className="clear-all-products-btn">
+                        <button>
+                            Clear all the products
+                        </button>
                     </div>
                 </div>
             </div>
