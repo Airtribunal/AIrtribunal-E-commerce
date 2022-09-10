@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import "./App.css";
 import { Navbar, Products, Cart, Homepage } from './components/index';
 import { Routes, Route } from 'react-router';
+import "boxicons"
 
 const App = () => {
   // Dark Mode 
