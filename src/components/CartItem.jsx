@@ -7,7 +7,7 @@ const CartItem = (props) => {
         <div className="product-card">
             <img className="product-img" src={img} alt={name} />
             <h2 className={theme ? "cart-item-name dark" : "cart-item-name"}>{name}</h2>
-            <p className={theme ? "cart-item-price dark" : "cart-item-price"}>{`${price}$`}</p>
+            <p className={theme ? "cart-item-price dark" : "cart-item-price"}>{`$ ${price}`}</p>
             <span className="product-cart remove-btn">
             <box-icon 
                 name='trash' 

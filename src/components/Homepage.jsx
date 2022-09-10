@@ -8,7 +8,7 @@ const Homepage = (props) => {
         <div className="homepage">
             <div className="container">
                 <div className={theme ? "home-content dark" : "home-content"}>
-                    <h1 className={theme ? "home-title-dark" : "home-title"}>Airtribunal</h1>
+                    <h1 className={theme ? "home-title-dark" : "home-title"} lang='en'>Airtribunal</h1>
                     <p className="home-desc">Fashion is the most changing and unpredictable thing in our life. Things that were in trend yesterday may become unfashionable and boring tomorrow. On the other hand tendencies that was once extremely popular sometimes come back to life.</p>
                 </div>
                 <Contact 

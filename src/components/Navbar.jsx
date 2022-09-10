@@ -18,7 +18,7 @@ const Navbar = (props) => {
         <div className="nav">
             <div className="container">
                 <div className="navigation">
-                    <Link to="/" onClick={() => window.location.replace("#")}><h1 className="logo">Airtribunal</h1></Link>
+                    <Link to="/" onClick={() => window.location.replace("#")}><h1 className="logo" lang='en'>Airtribunal</h1></Link>
                     <div className={isActive & theme ? "nav-links active dark" : isActive ? "nav-links active" : "nav-links"}>
                         <Link to="/" className="nav-link" onClick={() => window.location.replace("#")}>home</Link>
                         <Link to="/products" className="nav-link" onClick={() => window.location.replace("#")}>products</Link>
