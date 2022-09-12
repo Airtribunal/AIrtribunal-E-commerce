@@ -9,16 +9,14 @@ const Products = (props) => {
 
     const products = data.map((product) => {
         return (
-            <AnimationOnScroll animateOnce delay={50} animateIn="animate__fadeInLeftBig">
-                <Card
+            <Card
                 key={nanoid()}
                 id={product.id}
                 img={product.img}
                 name={product.name}
                 price={product.price}
                 addToCart={() => handleAddToCart(product)}
-                />
-            </AnimationOnScroll>
+            />
         )
     })
 
