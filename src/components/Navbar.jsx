@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { Switch } from 'evergreen-ui'
 import { FaBars } from "react-icons/fa"
 import { IoMdClose } from "react-icons/io"
@@ -7,6 +7,25 @@ import { IoMdClose } from "react-icons/io"
 const Navbar = (props) => {
     const [isActive, setIsActive] = useState(false);
     const [isMobile, setIsMobile] = useState(true)
+
+    const navigation = [
+        { id: 1, path: "/", name: "home", direction: "" },
+        { id: 1, path: "products", name: "products", direction: "products" },
+        { id: 1, path: "/", name: "contact", direction: "contact" }
+    ]
+
+    const navigationLinks = navigation.map(({ id, path, name, direction }) => {
+        return (
+            <NavLink
+                key={id}
+                to={path}
+                className="nav-link"
+                onClick={() => window.location.replace(`#${direction}`)}
+            >
+                {name}
+            </NavLink>
+        )
+    })
 
     function handleMobile() {
         setIsActive(prevActive => !prevActive)
@@ -19,11 +38,9 @@ const Navbar = (props) => {
             <div className="container">
                 <div className="navigation">
                     <Link to="/" onClick={() => window.location.replace("#")}><h1 className="logo" lang='en'>Airtribunal</h1></Link>
-                    <div className={isActive & theme ? "nav-links active dark" : isActive ? "nav-links active" : "nav-links"}>
-                        <Link to="/" className="nav-link" onClick={() => window.location.replace("#")}>home</Link>
-                        <Link to="/products" className="nav-link" onClick={() => window.location.replace("#")}>products</Link>
-                        <Link to="/" onClick={() => window.location.replace("#contact")} className="nav-link">contact</Link>
-                        <Link to="/cart" className="nav-link"><img id="cart-nav" src="/images/bag-gradient.png" alt="" className="cart-icon nav-cart" /></Link>
+                    <div className={isActive & theme ? "nav-links activee dark" : isActive ? "nav-links activee" : "nav-links"}>
+                        {navigationLinks}
+                        <NavLink to="/cart" className="nav-link"><img id="cart-nav" src="/images/bag-gradient.png" alt="" className="cart-icon nav-cart" /></NavLink>
                         <Switch checked={theme} onChange={handleToggle} />
                     </div>
                     <div className="bars">
