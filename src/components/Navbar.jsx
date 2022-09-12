@@ -10,9 +10,17 @@ const Navbar = (props) => {
 
     const navigation = [
         { id: 1, path: "/", name: "home", direction: "" },
-        { id: 1, path: "products", name: "products", direction: "products" },
-        { id: 1, path: "/", name: "contact", direction: "contact" }
+        { id: 2, path: "products", name: "products", direction: "products" },
+        { id: 3, path: "/", name: "contact", direction: "contact" }
     ]
+
+    function handleNavClosing() {
+        if (isActive) {
+            setTimeout(() => {
+                setIsActive(false)
+            }, 200)
+        }
+    }
 
     const navigationLinks = navigation.map(({ id, path, name, direction }) => {
         return (
@@ -20,7 +28,10 @@ const Navbar = (props) => {
                 key={id}
                 to={path}
                 className="nav-link"
-                onClick={() => window.location.replace(`#${direction}`)}
+                onClick={() => {
+                    window.location.replace(`#${direction}`)
+                    handleNavClosing()
+                }}
             >
                 {name}
             </NavLink>
@@ -40,7 +51,18 @@ const Navbar = (props) => {
                     <Link to="/" onClick={() => window.location.replace("#")}><h1 className="logo" lang='en'>Airtribunal</h1></Link>
                     <div className={isActive & theme ? "nav-links activee dark" : isActive ? "nav-links activee" : "nav-links"}>
                         {navigationLinks}
-                        <NavLink to="/cart" className="nav-link"><img id="cart-nav" src="/images/bag-gradient.png" alt="" className="cart-icon nav-cart" /></NavLink>
+                        <NavLink 
+                            to="/cart" 
+                            className="nav-link"
+                            onClick={handleNavClosing}
+                        >
+                                <img 
+                                    id="cart-nav" 
+                                    src="/images/bag-gradient.png" 
+                                    alt="" 
+                                    className="cart-icon nav-cart" 
+                                />
+                            </NavLink>
                         <Switch checked={theme} onChange={handleToggle} />
                     </div>
                     <div className="bars">
@@ -52,7 +74,7 @@ const Navbar = (props) => {
                 </div>
             </div>
             <div />
-        </div>
+        </div >
     );
 }
 
