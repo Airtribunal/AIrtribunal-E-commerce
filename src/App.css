@@ -252,12 +252,13 @@
   background: -webkit-linear-gradient(to right, #C06C84, #6C5B7B, #355C7D);
   background: linear-gradient(to top right, #C06C84, #6C5B7B, #355C7D);
   border-radius: 3px;
-
+  
   cursor: pointer;
 }
 
-.product-cart:hover {
-  transform: translateY(-.07rem);
+.product-cart:active {
+  transition: all .05s;
+  transform: translateY(-.2rem);
   box-shadow: #C06C84 0px 2px, #6c5b7ba3 0px 5px, #355b7d3f 0px 7px, #6c5b7b15 0px 8px;
 }
 
