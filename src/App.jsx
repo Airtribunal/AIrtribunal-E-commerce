@@ -41,11 +41,9 @@ const App = () => {
 
   // Deleting from Cart
   function deleteFromCart(id) {
-    cartArray.map((cartElement) => {
-      if (id === cartElement.id) {
-        console.log(id);
-      }
-    })
+    let newCartArray = cartArray.filter((item) => item.id !== id)
+    localStorage.setItem("cartArray", JSON.stringify(newCartArray))
+    setCartArray(newCartArray)
   }
   // Deleting from Cart
 
