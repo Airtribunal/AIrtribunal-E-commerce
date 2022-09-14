@@ -22,7 +22,7 @@ const Cart = (props) => {
 
     useEffect(() => {
         cartArray.map((cartElement) => {
-            return setTotal(prevTotal => prevTotal + cartElement.price)
+            setTotal(prevTotal => prevTotal + cartElement.price)
         })
     }, [cartArray])
 

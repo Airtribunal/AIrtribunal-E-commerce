@@ -44,6 +44,7 @@ const App = () => {
     let newCartArray = cartArray.filter((item) => item.id !== id)
     localStorage.setItem("cartArray", JSON.stringify(newCartArray))
     setCartArray(newCartArray)
+    window.location.reload()
   }
   // Deleting from Cart
 
