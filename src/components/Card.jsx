@@ -8,11 +8,10 @@ const Card = (props) => {
             <img className="product-img" src={props.img} alt={props.name} />
             <h2 className="product-title">{props.name}</h2>
             <span className="product price">{`$ ${props.price}`}</span>
-            <span className="product-cart">
+            <span className="product-cart" onClick={addToCart}>
                 <box-icon
                     id="cart-add"
                     name='shopping-bag'
-                    onClick={addToCart}
                     className="product-icon"
                     color="#fff"
                 >
