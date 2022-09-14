@@ -2,6 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;0,600;0,700;1,400;1,500&family=Rubik:wght@400;500;700&display=swap');
 
 /* General */
+textarea {
+  resize: none;
+  outline: none;
+}
 
 /* Selections */
   h1::selection {
