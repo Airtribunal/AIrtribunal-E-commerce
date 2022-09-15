@@ -29,8 +29,8 @@ const Contact = (props) => {
                 <div className="contact-content">
                     <div className="contact-part">
                         <h1 className={theme ? "contact-title dark" : "contact-title"}>Contact</h1>
-                        <form 
-                            onSubmit={handleSubmit} 
+                        <form
+                            onSubmit={handleSubmit}
                             className="contact-form"
                         >
                             <input

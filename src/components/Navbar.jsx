@@ -50,7 +50,7 @@ const Navbar = (props) => {
                 <div className="navigation">
                     <Link to="/" onClick={() => window.location.replace("#")}><h1 className="logo" lang='en'>Airtribunal</h1></Link>
                     <div 
-                        className={isActive & theme ? "nav-links activee dark" : isActive & !theme ? "nav-links activee" : theme ? "nav-links dark" : "nav-links"}
+                        className={isActive & !theme ? "nav-links activee" : isActive & theme ? "nav-links activee dark" : "nav-links" }
                     >
                         {navigationLinks}
                         <NavLink 

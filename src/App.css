@@ -132,7 +132,6 @@ textarea {
 
 .nav-links.dark {
   background-color: #000;
-  transition: all 1.5s ease-in;
 }
 
 .nav-link {
@@ -406,6 +405,7 @@ textarea {
 .input:nth-child(4) {
   padding-top: 1.75em;
   padding-bottom: 8em;
+  height: 3em;
 }
 
 .contact-button {
@@ -598,7 +598,6 @@ textarea {
     display: flex;
     height: 22rem;
     transform: translateX(100%);
-    transition: transform .3s ease-in;
   }
 
   .nav-links.activee {
@@ -614,7 +613,7 @@ textarea {
     transform: translateX(0);
   }
 
-  .nav-links.activee.dark {
+  .nav-links.dark {
     background-color: #000;
   }
 
