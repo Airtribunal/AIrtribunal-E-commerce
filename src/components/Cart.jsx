@@ -5,6 +5,7 @@ import { nanoid } from 'nanoid';
 const Cart = (props) => {
     const { theme, cartArray, handleDeleteFromCart, handleClearCart, isCleared } = props
     const [total, setTotal] = useState(0)
+    const [productsAmount, setProductsAmount] = useState(0)
 
     const cartElements = cartArray.map((cartElement) => {
         return (
@@ -22,7 +23,9 @@ const Cart = (props) => {
 
     useEffect(() => {
         cartArray.map((cartElement) => {
-            setTotal(prevTotal => prevTotal + cartElement.price)
+            let newTotal = prevTotal => prevTotal + cartElement.price
+            setTotal(newTotal)
+            setProductsAmount(prevAmount => prevAmount + 1)
         })
     }, [cartArray])
 
@@ -32,6 +35,8 @@ const Cart = (props) => {
                 <div className="container">
                     <h1 className={theme ? "cart-title dark" : "cart-title"}>Your cart</h1>
                     <p className={theme ? "total-price dark" : "total-price"}>{`Your total is $ ${total.toFixed(2)}`}</p>
+                    <p className={theme ? "total-price dark" : "total-price"}>{`Products in cart: ${productsAmount}`}</p>
+
                     <div className="cart-products">
                         {cartElements}
                     </div>
