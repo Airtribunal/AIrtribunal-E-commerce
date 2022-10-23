@@ -5,9 +5,9 @@ const Card = (props) => {
 
     return (
         <div className="product-card">
-            <img className="product-img" src={props.img} alt={props.name} />
-            <h2 className="product-title">{props.name}</h2>
-            <span className="product price">{`$ ${props.price}`}</span>
+            <img className="product-img" src={props?.img} alt={props?.name} />
+            <h2 className="product-title">{props?.name}</h2>
+            <span className="product price">{`$ ${props?.price}`}</span>
             <span className="product-cart" onClick={addToCart}>
                 <box-icon
                     id="cart-add"

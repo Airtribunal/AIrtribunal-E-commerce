@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import "./App.css";
 import { Navbar, Products, Cart, Homepage } from './components/index';
 import { Routes, Route } from 'react-router';
-import "boxicons"
+// import useFetch from './hooks/useFetch';
+import "boxicons";
 
 const App = () => {
   const [isCleared, setIsCleared] = useState(true)
@@ -56,7 +57,6 @@ const App = () => {
       window.location.reload()
     }
   }
-  // Clear the whole cart
 
   return (
     <main className={isDark ? "biggest dark" : "biggest"}>

@@ -553,13 +553,14 @@ textarea {
   color: #fff;
 }
 
-.clear-all-products-btn {
-  display: grid;
-  place-content: center;
+.products-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 2.5em 0 1.5em 0;
 }
 
-.clear-products-btn {
+.product-btn {
   padding: 1.3rem 2rem;
   margin: 1em .5rem 0 .5rem;
   text-transform: uppercase;

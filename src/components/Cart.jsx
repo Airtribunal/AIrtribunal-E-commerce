@@ -8,14 +8,16 @@ const Cart = (props) => {
     const [productsAmount, setProductsAmount] = useState(0)
 
     const cartElements = cartArray.map((cartElement) => {
+        console.log(cartElement.attributes?.itemPrice);
+        const url = cartElement.attributes.itemImage.data.attributes.url
         return (
             <CartItem
                 theme={theme}
                 key={nanoid()}
                 id={cartElement.id}
-                img={cartElement.img}
-                name={cartElement.name}
-                price={cartElement.price}
+                img={`http://localhost:1337${url}`}
+                name={cartElement.attributes?.itemTitle}
+                price={cartElement.attributes?.itemPrice}
                 deleteFromCart={() => handleDeleteFromCart(cartElement.id)}
             />
         )
@@ -23,7 +25,7 @@ const Cart = (props) => {
 
     useEffect(() => {
         cartArray.map((cartElement) => {
-            let newTotal = prevTotal => prevTotal + cartElement.price
+            let newTotal = prevTotal => prevTotal + cartElement.attributes?.itemPrice
             setTotal(newTotal)
             setProductsAmount(prevAmount => prevAmount + 1)
         })
@@ -40,9 +42,12 @@ const Cart = (props) => {
                     <div className="cart-products">
                         {cartElements}
                     </div>
-                    <div className="clear-all-products-btn">
-                        <button className="clear-products-btn" onClick={handleClearCart}>
+                    <div className="products-btn">
+                        <button className="product-btn" onClick={handleClearCart}>
                             {isCleared ? "nothing to clear" : "Clear all the products"}
+                        </button>
+                        <button className="product-btn">
+                            Purchase
                         </button>
                     </div>
                 </div>

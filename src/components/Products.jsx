@@ -1,20 +1,25 @@
 import React, { useEffect, useState } from 'react';
-import { AnimationOnScroll } from 'react-animation-on-scroll';
 import Card from './Card';
-import data from '../data';
+// import data from '../data';
+import useFetch from '../hooks/useFetch';
 import { nanoid } from 'nanoid';
 
 const Products = (props) => {
     const { theme, handleAddToCart } = props
-
-    const products = data.map((product) => {
+    // Fetching Data
+    const { data, error, loading } = useFetch("http://localhost:1337/api/proitems?populate=*")
+    if (loading) return <p>loading...</p>
+    if (error) return <p>error</p>
+    
+    const products = data[0].map((product) => {
+        const url = product.attributes.itemImage.data.attributes.url
         return (
             <Card
                 key={nanoid()}
                 id={product.id}
-                img={product.img}
-                name={product.name}
-                price={product.price}
+                img={`http://localhost:1337${url}`}
+                name={product.attributes?.itemTitle}
+                price={product.attributes?.itemPrice}
                 addToCart={() => handleAddToCart(product)}
             />
         )
