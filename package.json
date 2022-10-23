@@ -13,6 +13,7 @@
     "animate.css": "^4.1.1",
     "antd": "^4.22.7",
     "boxicons": "^2.1.2",
+    "dotenv": "^16.0.3",
     "evergreen-ui": "^6.10.3",
     "millify": "^5.0.0",
     "nanoid": "^4.0.0",
