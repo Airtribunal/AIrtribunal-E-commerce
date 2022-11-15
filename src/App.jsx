@@ -1,60 +1,63 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 import "./App.css";
-import { Navbar, Products, Cart, Homepage } from './components/index';
-import { Routes, Route } from 'react-router';
-// import useFetch from './hooks/useFetch';
+import { Navbar, Products, Cart, Homepage } from "./components/index";
+import { Routes, Route } from "react-router";
 import "boxicons";
+import data from './data.js';
+
 
 const App = () => {
-  const [isCleared, setIsCleared] = useState(true)
-  // Dark Mode 
+  const [isCleared, setIsCleared] = useState(true);
+  // Dark Mode
   const getTheme = () => {
-    return JSON.parse(localStorage.getItem("theme")) || false
-  }
+    return JSON.parse(localStorage.getItem("theme")) || false;
+  };
 
-  const [isDark, setIsDark] = useState(getTheme())
+  const [isDark, setIsDark] = useState(getTheme());
 
   useEffect(() => {
-    localStorage.setItem("theme", JSON.stringify(isDark))
-  }, [isDark])
+    localStorage.setItem("theme", JSON.stringify(isDark));
+  }, [isDark]);
 
   const toggleTheme = () => {
-    setIsDark(prevIsDark => !prevIsDark)
-  }
+    setIsDark((prevIsDark) => !prevIsDark);
+  };
   // Dark Mode
 
   // Adding to Cart
-  const [cartArray, setCartArray] = useState(JSON.parse(localStorage.getItem("cartArray")) || [])
+  const [cartArray, setCartArray] = useState(
+    JSON.parse(localStorage.getItem("cartArray")) || []
+  );
   useEffect(() => {
-    localStorage.setItem("cartArray", JSON.stringify(cartArray))
+    localStorage.setItem("cartArray", JSON.stringify(cartArray));
     if (cartArray.length > 0) {
-      setIsCleared(false)
+      setIsCleared(false);
     }
-  }, [cartArray])
+  }, [cartArray]);
 
-  function addToCart(product) {
-    setCartArray(prevCartArray => {
-      return [...prevCartArray, product]
-    })
-    setIsCleared(false)
-  }
   // Adding to Cart
+  function addToCart(product) {
+    setCartArray((prevCartArray) => {
+      return [...prevCartArray, product];
+    });
+    setIsCleared(false);
+  }
 
   // Deleting from Cart
   function deleteFromCart(id) {
-    let newCartArray = cartArray.filter((item) => item.id !== id)
-    localStorage.setItem("cartArray", JSON.stringify(newCartArray))
-    setCartArray(newCartArray)
-    window.location.reload()
+    let newCartArray = cartArray.filter((item) => item.id !== id);
+    localStorage.setItem("cartArray", JSON.stringify(newCartArray));
+    setCartArray(newCartArray);
+    window.location.reload();
   }
   // Deleting from Cart
 
   // Clear the whole cart
   function clearCart() {
-    setIsCleared(true)
-    localStorage.removeItem("cartArray")
+    setIsCleared(true);
+    localStorage.removeItem("cartArray");
     if (!isCleared) {
-      window.location.reload()
+      window.location.reload();
     }
   }
 
@@ -66,25 +69,35 @@ const App = () => {
       <section className="main">
         <div className={isDark ? "routes dark" : "routes"}>
           <Routes>
-            <Route exact path='/' element={<Homepage
-              theme={isDark}
-              handleToggle={toggleTheme}
-            />}
+            <Route
+              exact
+              path="/"
+              element={<Homepage theme={isDark} handleToggle={toggleTheme} />}
             />
-            <Route exact path='/cart' element={<Cart
-              theme={isDark}
-              handleToggle={toggleTheme}
-              cartArray={cartArray}
-              handleDeleteFromCart={deleteFromCart}
-              handleClearCart={clearCart}
-              isCleared={isCleared}
-            />}
+            <Route
+              exact
+              path="/cart"
+              element={
+                <Cart
+                  theme={isDark}
+                  handleToggle={toggleTheme}
+                  cartArray={cartArray}
+                  handleDeleteFromCart={deleteFromCart}
+                  handleClearCart={clearCart}
+                  isCleared={isCleared}
+                />
+              }
             />
-            <Route exact path="/products" element={<Products
-              theme={isDark}
-              handleToggle={toggleTheme}
-              handleAddToCart={addToCart}
-            />}
+            <Route
+              exact
+              path="/products"
+              element={
+                <Products
+                  theme={isDark}
+                  handleToggle={toggleTheme}
+                  handleAddToCart={addToCart}
+                />
+              }
             />
           </Routes>
         </div>
@@ -93,11 +106,11 @@ const App = () => {
         <div className="container">
           <div className="footer-content">
             <div className="link">
-              <box-icon name='phone' color="#fff" type='solid' ></box-icon>
+              <box-icon name="phone" color="#fff" type="solid"></box-icon>
               <a href="tel:+79322488005">+7 932 248 80 05</a>
             </div>
             <div className="link">
-              <box-icon name='envelope' color="#fff"></box-icon>
+              <box-icon name="envelope" color="#fff"></box-icon>
               <a href="mailto:airtribunal@gmail.com">airtribunal@gmail.com</a>
             </div>
           </div>
@@ -105,6 +118,6 @@ const App = () => {
       </footer>
     </main>
   );
-}
+};
 
 export default App;

@@ -9,16 +9,15 @@ const Cart = (props) => {
   const [productsAmount, setProductsAmount] = useState(0);
 
   const cartElements = cartArray.map((cartElement) => {
-    console.log(cartElement.attributes?.itemPrice);
-    const url = cartElement.attributes.itemImage.data.attributes.url;
+    console.log(cartElement);
     return (
       <CartItem
         theme={theme}
         key={nanoid()}
         id={cartElement.id}
-        img={`http://localhost:8091${url}`}
-        name={cartElement.attributes?.itemTitle}
-        price={cartElement.attributes?.itemPrice}
+        img={cartElement.img}
+        name={cartElement.name}
+        price={cartElement.price}
         deleteFromCart={() => handleDeleteFromCart(cartElement.id)}
       />
     );
@@ -27,7 +26,7 @@ const Cart = (props) => {
   useEffect(() => {
     cartArray.map((cartElement) => {
       let newTotal = (prevTotal) =>
-        prevTotal + cartElement.attributes?.itemPrice;
+        prevTotal + cartElement.price;
       setTotal(newTotal);
       setProductsAmount((prevAmount) => prevAmount + 1);
     });
